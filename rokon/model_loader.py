@@ -2,12 +2,12 @@ import tensorflow as tf
 import inspect
 from rokon import RNet  # Import RNet module properly
 
-# Dynamically discover all functions in RNet.py
+# Dynamically discover all functions and classes in RNet.py
 def get_model_dict():
     model_dict = {}
     # Loop through all members of the RNet module
     for name, obj in inspect.getmembers(RNet):
-        if inspect.isfunction(obj):  # Check if the member is a function
+        if inspect.isfunction(obj) or inspect.isclass(obj):  # Check for both functions and classes
             model_dict[name] = obj
     return model_dict
 
