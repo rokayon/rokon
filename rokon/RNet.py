@@ -78,4 +78,4 @@ def RNet6(input_shape, num_classes, activation="relu"):
     ])
     return model
 # Add this at the END of the file to allow wildcard imports
-__all__ = ["RNet1", "RNet2", "RNet3", "RNet4", "RNet5"]
+__all__ = ["RNet1", "RNet2", "RNet3", "RNet4", "RNet5", "RNet6"]
