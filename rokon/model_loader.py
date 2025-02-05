@@ -8,8 +8,10 @@ def get_model_dict():
     # Loop through all members of the RNet module
     for name, obj in inspect.getmembers(RNet):
         if inspect.isfunction(obj) or inspect.isclass(obj):  # Check for both functions and classes
+            print(f"Found model: {name}")  # Debug print to check the model names
             model_dict[name] = obj
     return model_dict
+
 
 # Get the dynamic model dictionary
 model_dict = get_model_dict()
