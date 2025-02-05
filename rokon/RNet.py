@@ -65,3 +65,6 @@ def RNet5(input_shape, num_classes, activation="relu"):
         layers.Dense(num_classes, activation='softmax')
     ])
     return model
+
+# Add this at the END of the file to allow wildcard imports
+__all__ = ["RNet1", "RNet2", "RNet3", "RNet4", "RNet5"]
