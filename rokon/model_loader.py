@@ -19,4 +19,5 @@ def get_rokon_model(model_name, input_shape=(256, 256, 3), num_classes=10, activ
     if model_name in model_dict:
         return model_dict[model_name](input_shape=input_shape, num_classes=num_classes, activation=activation)
     else:
-        raise ValueError(f"Model '{model_name}' not found in rokon!")
+        raise ValueError(f"Model '{model_name}' not found in rokon! Available models: {', '.join(model_dict.keys())}")
+
