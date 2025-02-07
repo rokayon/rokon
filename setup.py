@@ -43,7 +43,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="rokon",  # Package name (this will be used in pip install)
-    version="3.0.3",  # Update version as needed
+    version="3.0.4",  # Update version as needed
     author="Rokonozzaman Ayon",
     author_email="rokayon.cse@gmail.com",
     description="A collection of RNet (lightweight CNN) models",
