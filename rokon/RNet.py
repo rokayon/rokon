@@ -89,30 +89,26 @@ def RNet7(input_shape, num_classes, activation="relu"):
 
 def RNet8(input_shape, num_classes, activation="relu"):
     model = models.Sequential([
-        layers.Conv2D(64, (3, 3), activation=activation, input_shape=input_shape),
+        layers.DepthwiseConv2D((3, 3), activation=activation, input_shape=input_shape),
+        layers.Conv2D(32, (1, 1), activation=activation),
         layers.MaxPooling2D(2, 2),
-        layers.Conv2D(128, (3, 3), activation=activation),
-        layers.MaxPooling2D(2, 2),
-        layers.Conv2D(256, (3, 3), activation=activation),
-        layers.MaxPooling2D(2, 2),
+        layers.DepthwiseConv2D((3, 3), activation=activation),
         layers.Flatten(),
-        layers.Dense(512, activation=activation),
-        layers.Dense(num_classes, activation='softmax')  # Softmax activation for multi-class classification
+        layers.Dense(128, activation=activation),
+        layers.Dense(num_classes, activation='softmax')
     ])
     return model
 
 def RNet9(input_shape, num_classes, activation="relu"):
     model = models.Sequential([
-        layers.Conv2D(64, (3, 3), activation=activation, input_shape=input_shape),
-        layers.MaxPooling2D(2, 2),
-        layers.Conv2D(128, (3, 3), activation=activation),
-        layers.MaxPooling2D(2, 2),
-        layers.Conv2D(256, (3, 3), activation=activation),
-        layers.MaxPooling2D(2, 2),
-        layers.Conv2D(512, (3, 3), activation=activation),
-        layers.MaxPooling2D(2, 2),
+        layers.Conv2D(32, (3,3), activation=activation, input_shape=input_shape),
+        layers.Conv2D(32, (1,1), activation=activation),
+        layers.MaxPooling2D(2,2),
+        layers.Conv2D(64, (3,3), activation=activation),
+        layers.Conv2D(64, (1,1), activation=activation),
+        layers.MaxPooling2D(2,2),
         layers.Flatten(),
-        layers.Dense(1024, activation=activation),
+        layers.Dense(128, activation=activation),
         layers.Dense(num_classes, activation='softmax')
     ])
     return model
