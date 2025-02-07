@@ -43,7 +43,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="rokon",  # Package name (this will be used in pip install)
-    version="3.0.2",  # Update version as needed
+    version="3.0.3",  # Update version as needed
     author="Rokonozzaman Ayon",
     author_email="rokayon.cse@gmail.com",
     description="A collection of RNet (lightweight CNN) models",
@@ -55,7 +55,7 @@ setup(
         "tensorflow>=2.18.0",  # Ensure compatibility with newer TensorFlow versions
         "numpy>=1.21.0",  # Ensure compatibility with Numpy
         "matplotlib>=3.3.0",  # Ensure compatibility with Matplotlib
-        "visualkeras>=0.0.2",  # Ensure compatibility with Visualkeras
+        # "visualkeras>=0.0.2",  # Ensure compatibility with Visualkeras
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
